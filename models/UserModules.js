@@ -14,9 +14,9 @@ const UserSchema= new mongoose.Schema({
     password:{
         type:String
     },
-    isDeleted:{
+    isActive:{
         type:Boolean,
-        default:false
+        default:true
     }, 
 },
 {       

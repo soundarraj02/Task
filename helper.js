@@ -1,6 +1,6 @@
 const jwt = require ('jwt-simple')
 
-exports.requiresAuth = async (req,res,next) =>{
+const requiresAuth = async (req,res,next) =>{
     try{
         const idToken = req.header("Authorization");
         if(!idToken) {
@@ -15,3 +15,5 @@ exports.requiresAuth = async (req,res,next) =>{
         res.send({status:false, message:e.message})
     }
 }
+
+module.exports = {requiresAuth}
